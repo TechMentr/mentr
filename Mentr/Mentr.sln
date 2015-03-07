@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentr.Core", "Mentr.Core\Me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentr.SqlServerRepository", "Mentr.SqlServerRepository\Mentr.SqlServerRepository.csproj", "{B37224C7-47D2-4886-A13A-341799C2B97A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedInConnect", "LinkedInConnect\LinkedInConnect.csproj", "{BBF0DE88-58A1-413A-A041-B8650FAC7B31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{B37224C7-47D2-4886-A13A-341799C2B97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B37224C7-47D2-4886-A13A-341799C2B97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B37224C7-47D2-4886-A13A-341799C2B97A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBF0DE88-58A1-413A-A041-B8650FAC7B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF0DE88-58A1-413A-A041-B8650FAC7B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF0DE88-58A1-413A-A041-B8650FAC7B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF0DE88-58A1-413A-A041-B8650FAC7B31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

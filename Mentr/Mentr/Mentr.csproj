@@ -268,6 +268,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LinkedInConnect\LinkedInConnect.csproj">
+      <Project>{bbf0de88-58a1-413a-a041-b8650fac7b31}</Project>
+      <Name>LinkedInConnect</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mentr.Core\Mentr.Core.csproj">
       <Project>{72109ba6-ff5c-44e4-9f1f-6eaf05fd7e42}</Project>
       <Name>Mentr.Core</Name>

@@ -5,20 +5,29 @@
     <div class="jumbotron">
         <h2>Women of the week!</h2>
         <p class="lead"></p>
-        <div class="col-md-4"> 
-            <p>Burcu</p>
-            <p>test</p>
-            <p><a href="http://www.asp.net" class="btn btn-default">Learn more &raquo;</a></p>
+               <div class="col-md-4">
+            <asp:Panel ID="pnlDetails1" runat="server"><hr />
+            <asp:Image ID="imgPicture1" runat="server" /><br />
+                Name:  <asp:Label ID="lblName1" runat="server" /><br />
+                Headline: <asp:Label ID="lblHeadline1" runat="server" />
+                <asp:HyperLink ID="hlLinkedInUrl1" runat="server">LinkedIn</asp:HyperLink>
+            </asp:Panel>
         </div>
-        <div class="col-md-4"> 
-            <p>Erasmia</p>
-            <p>test</p>
-            <p><a href="http://www.asp.net" class="btn btn-default">Learn more &raquo;</a></p>
+        <div class="col-md-4">
+            <asp:Panel ID="pnlDetails2" runat="server"><hr />
+            <asp:Image ID="imgPicture2" runat="server" /><br />
+                Name:  <asp:Label ID="lblName2" runat="server" /><br />
+                Headline: <asp:Label ID="lblHeadline2" runat="server" />
+                <asp:HyperLink ID="hlLinkedInUrl2" runat="server">LinkedIn</asp:HyperLink>
+            </asp:Panel>
         </div>
-        <div class="col-md-4"> 
-            <p>Ritu</p>
-            <p>test</p>
-            <p><a href="http://www.asp.net" class="btn btn-default">Learn more &raquo;</a></p>
+        <div class="col-md-4">
+            <asp:Panel ID="pnlDetails3" runat="server"><hr />
+            <asp:Image ID="imgPicture3" runat="server" /><br />
+                Name:  <asp:Label ID="lblName3" runat="server" /><br />
+                Headline: <asp:Label ID="lblHeadline3" runat="server" />
+                <asp:HyperLink ID="hlLinkedInUrl3" runat="server">LinkedIn</asp:HyperLink>
+            </asp:Panel>
         </div>
     </div>
 
