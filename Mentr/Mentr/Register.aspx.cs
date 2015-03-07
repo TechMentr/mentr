@@ -60,7 +60,7 @@ namespace Mentr
                         cmdInfo.CommandType = CommandType.StoredProcedure;
                         cmdInfo.Parameters.AddWithValue("@Name", txtName.Text.Trim());
                         cmdInfo.Parameters.AddWithValue("@Surname", txtSurname.Text.Trim());
-                        cmdInfo.Parameters.AddWithValue("@Gender", (gender. ? 'F' : 'M'));
+                        cmdInfo.Parameters.AddWithValue("@Gender", (genderId.SelectedItem.Value.ToString()));
                         cmdInfo.Parameters.AddWithValue("@Password", Security.HashSHA1(txtPassword.Text.Trim()));
                         cmdInfo.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                         cmdInfo.Parameters.AddWithValue("@IsMentor", chkMentor.Checked);

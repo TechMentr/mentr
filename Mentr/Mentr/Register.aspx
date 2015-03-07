@@ -44,7 +44,7 @@
                     Gender
                 </td>
                 <td>
-                    <asp:RadioButtonList runat="server" ID="radio" RepeatDirection="Horizontal" style="display:inline">
+                    <asp:RadioButtonList runat="server" ID="genderId" RepeatLayout="Flow" RepeatDirection="Horizontal" style="display:inline">
                         <asp:ListItem Value="0">F</asp:ListItem>
                         <asp:ListItem Value="1">M</asp:ListItem>
                     </asp:RadioButtonList>

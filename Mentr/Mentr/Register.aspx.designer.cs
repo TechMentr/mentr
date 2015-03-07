@@ -31,13 +31,13 @@ namespace Mentr {
         protected global::System.Web.UI.WebControls.TextBox txtSurname;
         
         /// <summary>
-        /// radio control.
+        /// genderId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList radio;
+        protected global::System.Web.UI.WebControls.RadioButtonList genderId;
         
         /// <summary>
         /// gender control.
