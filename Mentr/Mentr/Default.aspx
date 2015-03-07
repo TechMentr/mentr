@@ -82,7 +82,7 @@
                     <td>
                     </td>
                     <td>
-                        <asp:Button Text="Login" runat="server" OnClick="Login" />
+                        <asp:Button Text="Login" runat="server" OnClick="LoginUser" />
                     </td>
                     <td>
                     </td>

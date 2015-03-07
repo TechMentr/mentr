@@ -17,7 +17,7 @@ namespace Mentr
 
         }
 
-        protected void Login(object sender, EventArgs e)
+        protected void LoginUser(object sender, EventArgs e)
         {
             int userId = 0;
             string constr = ConfigurationManager.ConnectionStrings["SQLAzureConnection"].ConnectionString;
