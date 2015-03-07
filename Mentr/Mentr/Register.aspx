@@ -44,8 +44,11 @@
                     Gender
                 </td>
                 <td>
-                    <asp:RadioButton ID="genderF" Text="F" runat="server" GroupName="gender" CssClass="labelReg"></asp:RadioButton>
-                    <asp:RadioButton ID="genderM" Text="M" runat="server" GroupName="gender" CssClass="labelReg"></asp:RadioButton>
+                    <asp:RadioButtonList runat="server" ID="radio" RepeatDirection="Horizontal" style="display:inline">
+                        <asp:ListItem Value="0">F</asp:ListItem>
+                        <asp:ListItem Value="1">M</asp:ListItem>
+                    </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator runat="server" ID="gender" ControlToValidate="radio"  errormessage="Select One option"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -106,8 +109,10 @@
             <td>
                 <asp:Label ID="Label9" runat="server" Text="Skills"></asp:Label>
             </td>
-            <td colspan="2">
+            <td colspan="3">
                 <asp:CheckBoxList ID="cblstSkills" runat="server" Width="128px"></asp:CheckBoxList>
+                <asp:TextBox ID="txtYearsExperience" runat="server" CssClass="labelReg"/>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtYearsExperience" runat="server" ErrorMessage="Only Numbers allowed" ValidationExpression="\d+"/>
             </td>
             <td>&nbsp;</td>
             </tr>

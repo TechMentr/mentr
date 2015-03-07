@@ -31,22 +31,22 @@ namespace Mentr {
         protected global::System.Web.UI.WebControls.TextBox txtSurname;
         
         /// <summary>
-        /// genderF control.
+        /// radio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton genderF;
+        protected global::System.Web.UI.WebControls.RadioButtonList radio;
         
         /// <summary>
-        /// genderM control.
+        /// gender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton genderM;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator gender;
         
         /// <summary>
         /// txtEmail control.
@@ -110,5 +110,23 @@ namespace Mentr {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList cblstSkills;
+        
+        /// <summary>
+        /// txtYearsExperience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtYearsExperience;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
     }
 }

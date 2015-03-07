@@ -60,7 +60,7 @@ namespace Mentr
                         cmdInfo.CommandType = CommandType.StoredProcedure;
                         cmdInfo.Parameters.AddWithValue("@Name", txtName.Text.Trim());
                         cmdInfo.Parameters.AddWithValue("@Surname", txtSurname.Text.Trim());
-                        cmdInfo.Parameters.AddWithValue("@Gender", (genderF.Checked ? 'F' : 'M'));
+                        cmdInfo.Parameters.AddWithValue("@Gender", (gender. ? 'F' : 'M'));
                         cmdInfo.Parameters.AddWithValue("@Password", Security.HashSHA1(txtPassword.Text.Trim()));
                         cmdInfo.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                         cmdInfo.Parameters.AddWithValue("@IsMentor", chkMentor.Checked);
@@ -78,29 +78,36 @@ namespace Mentr
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
                         cmdSkill.CommandType = CommandType.StoredProcedure;
-                        //cmd.Parameters.Clear();
-                        cmdSkill.Parameters.AddWithValue("@MemberId", emailId);
-                        cmdSkill.Parameters.AddWithValue("@SkillId", txtSurname.Text.Trim());
-                        cmdSkill.Parameters.AddWithValue("@YearsExperience", );
-                        cmdSkill.Connection = con;
-                        con.Open();
-                        mentorSkillId = Convert.ToInt32(cmdSkill.ExecuteScalar());
-                        con.Close();
+
+                        foreach (ListItem item in cblstSkills.Items)
+                        {
+                            //cmd.Parameters.Clear();
+                            if (item.Selected)
+                            {
+                                cmdSkill.Parameters.AddWithValue("@MemberId", emailId);
+                                cmdSkill.Parameters.AddWithValue("@SkillId", item.Value);
+                                cmdSkill.Parameters.AddWithValue("@YearsExperience", Convert.ToInt32(txtYearsExperience.Text.Trim()));
+                                cmdSkill.Connection = con;
+                                con.Open();
+                                mentorSkillId = Convert.ToInt32(cmdSkill.ExecuteScalar());
+                                con.Close();
+                            }
+                        }
                     }
-                }
 
 
-                string message = string.Empty;
-                switch (emailId)
-                {
-                    case -1:
-                        message = "Supplied email address has already been used.";
-                        break;
-                    default:
-                        message = "Registration successful.";
-                        break;
+                    string message = string.Empty;
+                    switch (emailId)
+                    {
+                        case -1:
+                            message = "Supplied email address has already been used.";
+                            break;
+                        default:
+                            message = "Registration successful.";
+                            break;
+                    }
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
                 }
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
             }
         }
 
