@@ -44,3 +44,5 @@ C:\Dev\Projects\mentr\Mentr\Mentr\obj\Debug\Mentr.csprojResolveAssemblyReference
 C:\Dev\Projects\mentr\Mentr\Mentr\bin\Content\images\logo.jpg
 C:\Dev\Projects\mentr\Mentr\Mentr\bin\Mentr.Core.dll
 C:\Dev\Projects\mentr\Mentr\Mentr\bin\Mentr.Core.pdb
+C:\Dev\Projects\mentr\Mentr\Mentr\bin\LinkedIn.NET.dll
+C:\Dev\Projects\mentr\Mentr\Mentr\bin\LinkedIn.NET.xml

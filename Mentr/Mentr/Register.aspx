@@ -21,9 +21,8 @@
                         runat="server" />
                 </td>
             </tr>
-            <tr>
-            </tr>
-            <tr>
+            &nbsp;
+            &nbsp;
             <tr>
                 <td>
                     Surname
@@ -36,22 +35,19 @@
                         runat="server" />
                 </td>
             </tr>
-            </tr>
-            <tr>
+            &nbsp;
+            &nbsp;
             <tr>
                 <td>
-                    Username
+                    Gender
                 </td>
                 <td>
-                    <asp:TextBox ID="txtUsername" runat="server" />
-                </td>
-                <td>
-                    <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txtUsername"
-                        runat="server" />
+                    <asp:RadioButton ID="genderF" Text="F" runat="server" GroupName="gender"></asp:RadioButton>
+                    <asp:RadioButton ID="genderM" Text="M" runat="server" GroupName="gender"></asp:RadioButton>
                 </td>
             </tr>
-            </tr>
-            <tr>
+            &nbsp;
+            &nbsp;
             <tr>
                 <td>
                     Email
@@ -66,8 +62,8 @@
                         ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid email address." />
                 </td>
             </tr>
-            <tr>
-            </tr>
+            &nbsp;
+            &nbsp;
             <tr>
                 <td>
                     Do you want to be a mentor?
@@ -76,8 +72,8 @@
                     <asp:CheckBox ID="chkMentor" runat="server" />
                 </td>
             </tr>
-            <tr>
-            </tr>
+            &nbsp;
+            &nbsp;
             <tr>
                 <td>
                     Do you want to be a mentee?
@@ -86,10 +82,19 @@
                     <asp:CheckBox ID="chkMentee" runat="server" />
                 </td>
             </tr>
+            &nbsp;
+            &nbsp;
             <tr>
+            <td>
+                <asp:Label ID="Label9" runat="server" Text="Skills"></asp:Label>
+            </td>
+            <td colspan="2">
+                <asp:CheckBoxList ID="cblstskills" runat="server" Width="128px" Enabled="False"></asp:CheckBoxList>
+            </td>
+            <td>&nbsp;</td>
             </tr>
-            <tr>
-            </tr>
+            &nbsp;
+            &nbsp;
             <tr>
                 <td>
                 </td>

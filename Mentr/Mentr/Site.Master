@@ -64,6 +64,7 @@
                         <li><a runat="server" href="~/Home">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/UpdateProfile">Update Your Profile</a></li>
                     </ul>
                 </div>
             </div>

@@ -8,7 +8,7 @@
 
         string Surname { get; }
 
-        string Username { get; }
+        char Gender { get; }
 
         string Email { get; }
 

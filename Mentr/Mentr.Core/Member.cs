@@ -8,7 +8,7 @@
 
         public string Surname { get; set; }
 
-        public string Username { get; set; }
+        public char Gender { get; set; }
 
         public string Email { get; set; }
 

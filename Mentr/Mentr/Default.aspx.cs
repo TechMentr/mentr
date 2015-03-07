@@ -30,11 +30,6 @@ namespace Mentr
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                        //cmd.Parameters.Add("@Name", SqlDbType.VarChar, 64).Direction = ParameterDirection.Output;
-                        //cmd.Parameters.Add("@Surname", SqlDbType.VarChar, 64).Direction = ParameterDirection.Output;
-                        //cmd.Parameters.Add("@Username", SqlDbType.VarChar).Direction = ParameterDirection.Output;
-                        //cmd.Parameters.Add("@IsMentor", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                        //cmd.Parameters.Add("@IsMentee", SqlDbType.Bit).Direction = ParameterDirection.Output;
                         cmd.Connection = con;
                         con.Open();
                         
@@ -44,7 +39,7 @@ namespace Mentr
                             {
                                 member.Name = reader.GetString(reader.GetOrdinal("Name"));
                                 member.Surname = reader.GetString(reader.GetOrdinal("Surname"));
-                                member.Username = reader.GetString(reader.GetOrdinal("Username"));
+                                member.Gender = reader.GetChar(reader.GetOrdinal("Gender"));
                                 member.IsMentor = reader.GetBoolean(reader.GetOrdinal("IsMentor"));
                                 member.IsMentee = reader.GetBoolean(reader.GetOrdinal("IsMentee"));
                             }

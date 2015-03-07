@@ -14,7 +14,36 @@ namespace Mentr
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                this.PopulateHobbies();
+            }
+        }
 
+        private void PopulateHobbies()
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["SQLAzureConnection"].ConnectionString;
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "select * from [dbo].[Skill]";
+                    cmd.Connection = conn;
+                    conn.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            ListItem item = new ListItem();
+                            item.Text = sdr["Name"].ToString();
+                            item.Value = sdr["ID"].ToString();
+                            //item.Selected = Convert.ToBoolean(sdr["IsSelected"]);
+                            cblstskills.Items.Add(item);
+                        }
+                    }
+                    conn.Close();
+                }
+            }
         }
 
         protected void RegisterUser(object sender, EventArgs e)
@@ -30,7 +59,7 @@ namespace Mentr
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
                         cmd.Parameters.AddWithValue("@Surname", txtSurname.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
+                        //cmd.Parameters.AddWithValue("@Gender", txtUsername.Text.Trim());
                         //cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                         cmd.Parameters.AddWithValue("@IsMentor", chkMentor.Checked);
