@@ -8,6 +8,8 @@
 
         string Surname { get; }
 
+        string Username { get; }
+
         string Email { get; }
 
         bool IsMentor { get; }

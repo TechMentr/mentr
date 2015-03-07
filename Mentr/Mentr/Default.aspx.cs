@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using Mentr.Core;
 
 namespace Mentr
 {
@@ -19,41 +20,51 @@ namespace Mentr
 
         protected void LoginUser(object sender, EventArgs e)
         {
-            int userId = 0;
+            var member = new Member();
             string constr = ConfigurationManager.ConnectionStrings["SQLAzureConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("GetMemberInfo"))
+                using (SqlCommand cmd = new SqlCommand("GetMemberInfoByEmail"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                        cmd.Parameters.Add("@Name", SqlDbType.VarChar).Direction = ParameterDirection.Output;
-                        cmd.Parameters.Add("@Surname", SqlDbType.VarChar).Direction = ParameterDirection.Output;
-                        cmd.Parameters.Add("@Username", SqlDbType.VarChar).Direction = ParameterDirection.Output;
-                        cmd.Parameters.Add("@IsMentor", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                        cmd.Parameters.Add("@IsMentee", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                        //cmd.Parameters.Add("@Name", SqlDbType.VarChar, 64).Direction = ParameterDirection.Output;
+                        //cmd.Parameters.Add("@Surname", SqlDbType.VarChar, 64).Direction = ParameterDirection.Output;
+                        //cmd.Parameters.Add("@Username", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                        //cmd.Parameters.Add("@IsMentor", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                        //cmd.Parameters.Add("@IsMentee", SqlDbType.Bit).Direction = ParameterDirection.Output;
                         cmd.Connection = con;
                         con.Open();
-                        userId = Convert.ToInt32(cmd.ExecuteScalar());
+                        
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                member.Name = reader.GetString(reader.GetOrdinal("Name"));
+                                member.Surname = reader.GetString(reader.GetOrdinal("Surname"));
+                                member.Username = reader.GetString(reader.GetOrdinal("Username"));
+                                member.IsMentor = reader.GetBoolean(reader.GetOrdinal("IsMentor"));
+                                member.IsMentee = reader.GetBoolean(reader.GetOrdinal("IsMentee"));
+                            }
+                        }
+
                         con.Close();
                     }
                 }
                 string message = string.Empty;
-                switch (userId)
+                switch (member.Name)
                 {
-                    case -1:
-                        message = "Username already exists.\\nPlease choose a different username.";
-                        break;
-                    case -2:
-                        message = "Supplied email address has already been used.";
+                    case null:
+                        message = "There is no member with this email address.";
+                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
                         break;
                     default:
-                        message = "Registration successful.\\nUser Id: " + userId.ToString();
+                        Response.Redirect("Home.aspx");
                         break;
                 }
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
+                
             }
         }
     }

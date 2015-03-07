@@ -58,7 +58,7 @@
         <div class="container body-content">
     <div class="row">
         <div class="col-md-6">
-            <img src="Content/images/logoNew.png"/>
+            <asp:Image ID="Logo" ImageUrl="~/Content/images/logoNew.png" runat="server"/>
         </div>
         <div class="col-md-6">
             <h2>Login</h2>

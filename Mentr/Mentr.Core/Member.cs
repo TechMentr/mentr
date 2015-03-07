@@ -2,16 +2,18 @@
 {
     public class Member
     {
-        public int ID { get; private set; }
+        public int ID { get; set; }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
-        public string Surname { get; private set; }
+        public string Surname { get; set; }
 
-        public string Email { get; private set; }
+        public string Username { get; set; }
 
-        public bool IsMentor { get; private set; }
+        public string Email { get; set; }
 
-        public bool IsMentee { get; private set; }
+        public bool IsMentor { get; set; }
+
+        public bool IsMentee { get; set; }
     }
 }

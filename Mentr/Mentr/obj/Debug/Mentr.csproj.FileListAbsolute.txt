@@ -41,3 +41,6 @@ C:\Dev\Projects\mentr\Mentr\Mentr\obj\Debug\ApplicationInsights.config
 C:\Dev\Projects\mentr\Mentr\Mentr\obj\Debug\Mentr.dll
 C:\Dev\Projects\mentr\Mentr\Mentr\obj\Debug\Mentr.pdb
 C:\Dev\Projects\mentr\Mentr\Mentr\obj\Debug\Mentr.csprojResolveAssemblyReference.cache
+C:\Dev\Projects\mentr\Mentr\Mentr\bin\Content\images\logo.jpg
+C:\Dev\Projects\mentr\Mentr\Mentr\bin\Mentr.Core.dll
+C:\Dev\Projects\mentr\Mentr\Mentr\bin\Mentr.Core.pdb

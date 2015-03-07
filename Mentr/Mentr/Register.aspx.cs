@@ -51,7 +51,7 @@ namespace Mentr
                         message = "Supplied email address has already been used.";
                         break;
                     default:
-                        message = "Registration successful.\\nUser Id: " + userId.ToString();
+                        message = "Registration successful.";
                         break;
                 }
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
