@@ -58,6 +58,24 @@ namespace Mentr {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
+        /// txtPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        
+        /// <summary>
+        /// txtConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+        
+        /// <summary>
         /// chkMentor control.
         /// </summary>
         /// <remarks>
@@ -85,12 +103,12 @@ namespace Mentr {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// cblstskills control.
+        /// cblstSkills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cblstskills;
+        protected global::System.Web.UI.WebControls.CheckBoxList cblstSkills;
     }
 }

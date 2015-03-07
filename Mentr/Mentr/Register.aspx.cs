@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace Mentr
 {
@@ -16,11 +17,11 @@ namespace Mentr
         {
             if (!IsPostBack)
             {
-                this.PopulateHobbies();
+                this.PopulateSkills();
             }
         }
 
-        private void PopulateHobbies()
+        private void PopulateSkills()
         {
             using (SqlConnection conn = new SqlConnection())
             {
@@ -38,7 +39,7 @@ namespace Mentr
                             item.Text = sdr["Name"].ToString();
                             item.Value = sdr["ID"].ToString();
                             //item.Selected = Convert.ToBoolean(sdr["IsSelected"]);
-                            cblstskills.Items.Add(item);
+                            cblstSkills.Items.Add(item);
                         }
                     }
                     conn.Close();
@@ -48,35 +49,51 @@ namespace Mentr
 
         protected void RegisterUser(object sender, EventArgs e)
         {
-            int userId = 0;
+            int emailId = 0;
             string constr = ConfigurationManager.ConnectionStrings["SQLAzureConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SetMemberInfo"))
+                using (SqlCommand cmdInfo = new SqlCommand("SetMemberInfo"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Surname", txtSurname.Text.Trim());
-                        //cmd.Parameters.AddWithValue("@Gender", txtUsername.Text.Trim());
-                        //cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                        cmd.Parameters.AddWithValue("@IsMentor", chkMentor.Checked);
-                        cmd.Parameters.AddWithValue("@IsMentee", chkMentee.Checked);
-                        cmd.Connection = con;
+                        cmdInfo.CommandType = CommandType.StoredProcedure;
+                        cmdInfo.Parameters.AddWithValue("@Name", txtName.Text.Trim());
+                        cmdInfo.Parameters.AddWithValue("@Surname", txtSurname.Text.Trim());
+                        cmdInfo.Parameters.AddWithValue("@Gender", (genderF.Checked ? 'F' : 'M'));
+                        cmdInfo.Parameters.AddWithValue("@Password", Security.HashSHA1(txtPassword.Text.Trim()));
+                        cmdInfo.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                        cmdInfo.Parameters.AddWithValue("@IsMentor", chkMentor.Checked);
+                        cmdInfo.Parameters.AddWithValue("@IsMentee", chkMentee.Checked);
+                        cmdInfo.Connection = con;
                         con.Open();
-                        userId = Convert.ToInt32(cmd.ExecuteScalar());
+                        emailId = Convert.ToInt32(cmdInfo.ExecuteScalar());
                         con.Close();
                     }
                 }
+
+                int mentorSkillId = 0;
+                using (SqlCommand cmdSkill = new SqlCommand("SetMemberSkills"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmdSkill.CommandType = CommandType.StoredProcedure;
+                        //cmd.Parameters.Clear();
+                        cmdSkill.Parameters.AddWithValue("@MemberId", emailId);
+                        cmdSkill.Parameters.AddWithValue("@SkillId", txtSurname.Text.Trim());
+                        cmdSkill.Parameters.AddWithValue("@YearsExperience", );
+                        cmdSkill.Connection = con;
+                        con.Open();
+                        mentorSkillId = Convert.ToInt32(cmdSkill.ExecuteScalar());
+                        con.Close();
+                    }
+                }
+
+
                 string message = string.Empty;
-                switch (userId)
+                switch (emailId)
                 {
                     case -1:
-                        message = "Username already exists.\\nPlease choose a different username.";
-                        break;
-                    case -2:
                         message = "Supplied email address has already been used.";
                         break;
                     default:
@@ -84,6 +101,23 @@ namespace Mentr
                         break;
                 }
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
+            }
+        }
+
+        public class Security
+        {
+            public static string HashSHA1(string value)
+            {
+                var sha1 = System.Security.Cryptography.SHA1.Create();
+                var inputBytes = Encoding.ASCII.GetBytes(value);
+                var hash = sha1.ComputeHash(inputBytes);
+
+                var sb = new StringBuilder();
+                for (var i = 0; i < hash.Length; i++)
+                {
+                    sb.Append(hash[i].ToString("X2"));
+                }
+                return sb.ToString();
             }
         }
     }
