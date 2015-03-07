@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentr", "Mentr\Mentr.csproj", "{3FDB0E3B-41DE-44D1-9B27-00A422545B7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{E5902207-E883-476C-A252-DD73AAD0915F}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{7DC7AEB0-FF25-412D-A744-C54F43C283BD}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\Mentr-WAWS-dev.json = PublishScripts\Configurations\Mentr-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3E342320-9F6D-449A-A9B0-6F9613009F07}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentr.Core", "Mentr.Core\Mentr.Core.csproj", "{72109BA6-FF5C-44E4-9F1F-6EAF05FD7E42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentr.SqlServerRepository", "Mentr.SqlServerRepository\Mentr.SqlServerRepository.csproj", "{B37224C7-47D2-4886-A13A-341799C2B97A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FDB0E3B-41DE-44D1-9B27-00A422545B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDB0E3B-41DE-44D1-9B27-00A422545B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDB0E3B-41DE-44D1-9B27-00A422545B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDB0E3B-41DE-44D1-9B27-00A422545B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72109BA6-FF5C-44E4-9F1F-6EAF05FD7E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72109BA6-FF5C-44E4-9F1F-6EAF05FD7E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72109BA6-FF5C-44E4-9F1F-6EAF05FD7E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72109BA6-FF5C-44E4-9F1F-6EAF05FD7E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37224C7-47D2-4886-A13A-341799C2B97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37224C7-47D2-4886-A13A-341799C2B97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37224C7-47D2-4886-A13A-341799C2B97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37224C7-47D2-4886-A13A-341799C2B97A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7DC7AEB0-FF25-412D-A744-C54F43C283BD} = {E5902207-E883-476C-A252-DD73AAD0915F}
+	EndGlobalSection
+EndGlobal

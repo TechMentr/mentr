@@ -1,0 +1,5 @@
+C:\Dev\Projects\mentr\Mentr\Mentr.Core\obj\Debug\Mentr.Core.csprojResolveAssemblyReference.cache
+C:\Dev\Projects\mentr\Mentr\Mentr.Core\bin\Debug\Mentr.Core.dll
+C:\Dev\Projects\mentr\Mentr\Mentr.Core\bin\Debug\Mentr.Core.pdb
+C:\Dev\Projects\mentr\Mentr\Mentr.Core\obj\Debug\Mentr.Core.dll
+C:\Dev\Projects\mentr\Mentr\Mentr.Core\obj\Debug\Mentr.Core.pdb
