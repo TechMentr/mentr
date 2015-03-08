@@ -14,21 +14,24 @@ namespace Mentr
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet("Mentors");
+            DataSet ds = new DataSet();
             string constr = ConfigurationManager.ConnectionStrings["SQLAzureConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("GetMentorsByMenteeEmail"))
                 {
-                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Email", Session["sessEmail"]);
+                        cmd.Parameters.AddWithValue("@Email", "anastasaki.er@gmail.com");
                         cmd.Connection = con;
 
                         sda.Fill(ds);
                     }
                 }
+
+                mentorsGrid.DataSource = ds;
+                mentorsGrid.DataBind();
             }
         }
     }
