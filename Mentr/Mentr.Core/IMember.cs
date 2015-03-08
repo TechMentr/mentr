@@ -17,5 +17,7 @@
         bool IsMentor { get; }
 
         bool IsMentee { get; }
+
+        Skill[] Skills { get; }
     }
 }
