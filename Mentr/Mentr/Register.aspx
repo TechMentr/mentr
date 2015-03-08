@@ -48,7 +48,7 @@
                         <asp:ListItem Value="0">F</asp:ListItem>
                         <asp:ListItem Value="1">M</asp:ListItem>
                     </asp:RadioButtonList>
-                    <asp:RequiredFieldValidator runat="server" ID="gender" ControlToValidate="radio"  errormessage="Select One option"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ErrorMessage="Select One option" ForeColor="Red" runat="server" ControlToValidate="genderId"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -106,15 +106,18 @@
                 </td>
             </tr>
             <tr>
-            <td>
-                <asp:Label ID="Label9" runat="server" Text="Skills"></asp:Label>
-            </td>
-            <td colspan="3">
-                <asp:CheckBoxList ID="cblstSkills" runat="server" Width="128px"></asp:CheckBoxList>
-                <asp:TextBox ID="txtYearsExperience" runat="server" CssClass="labelReg"/>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtYearsExperience" runat="server" ErrorMessage="Only Numbers allowed" ValidationExpression="\d+"/>
-            </td>
-            <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="Label9" runat="server" Text="Skills"></asp:Label>
+                </td>
+                <td>
+                    <asp:CheckBoxList ID="cblstSkills" runat="server" Width="128px"></asp:CheckBoxList>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtYearsExperience" runat="server" CssClass="labelReg"/>
+                </td>
+                <td>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtYearsExperience" runat="server" ErrorMessage="Only Numbers allowed" ValidationExpression="\d+"/>
+                </td>
             </tr>
             <tr>
                 <td>

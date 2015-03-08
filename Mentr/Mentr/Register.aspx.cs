@@ -33,13 +33,16 @@ namespace Mentr
                     conn.Open();
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
+                        int i = 0;
                         while (sdr.Read())
                         {
                             ListItem item = new ListItem();
                             item.Text = sdr["Name"].ToString();
                             item.Value = sdr["ID"].ToString();
-                            //item.Selected = Convert.ToBoolean(sdr["IsSelected"]);
                             cblstSkills.Items.Add(item);
+                            TextBox txt = new TextBox();
+                            txt.ID = "textBox" + i;
+                            
                         }
                     }
                     conn.Close();
@@ -72,42 +75,42 @@ namespace Mentr
                     }
                 }
 
-                int mentorSkillId = 0;
-                using (SqlCommand cmdSkill = new SqlCommand("SetMemberSkills"))
+                string message = string.Empty;
+                if (emailId == -1)
                 {
-                    using (SqlDataAdapter sda = new SqlDataAdapter())
-                    {
-                        cmdSkill.CommandType = CommandType.StoredProcedure;
+                    message = "Supplied email address has already been used.";
 
-                        foreach (ListItem item in cblstSkills.Items)
+                }
+                else
+                {
+                    int mentorSkillId = 0;
+                    using (SqlCommand cmdSkill = new SqlCommand("SetMemberSkills"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
                         {
-                            //cmd.Parameters.Clear();
-                            if (item.Selected)
+                            cmdSkill.CommandType = CommandType.StoredProcedure;
+
+                            foreach (ListItem item in cblstSkills.Items)
                             {
-                                cmdSkill.Parameters.AddWithValue("@MemberId", emailId);
-                                cmdSkill.Parameters.AddWithValue("@SkillId", item.Value);
-                                cmdSkill.Parameters.AddWithValue("@YearsExperience", Convert.ToInt32(txtYearsExperience.Text.Trim()));
-                                cmdSkill.Connection = con;
-                                con.Open();
-                                mentorSkillId = Convert.ToInt32(cmdSkill.ExecuteScalar());
-                                con.Close();
+                                if (item.Selected)
+                                {
+                                    cmdSkill.Parameters.Clear();
+                                    cmdSkill.Parameters.AddWithValue("@MemberId", emailId);
+                                    cmdSkill.Parameters.AddWithValue("@SkillId", item.Value);
+                                    cmdSkill.Parameters.AddWithValue("@YearsExperience", Convert.ToInt32(txtYearsExperience.Text.Trim()));
+                                    cmdSkill.Connection = con;
+                                    con.Open();
+                                    mentorSkillId = Convert.ToInt32(cmdSkill.ExecuteScalar());
+                                    con.Close();
+                                }
                             }
                         }
                     }
 
-
-                    string message = string.Empty;
-                    switch (emailId)
-                    {
-                        case -1:
-                            message = "Supplied email address has already been used.";
-                            break;
-                        default:
-                            message = "Registration successful.";
-                            break;
-                    }
-                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
+                    message = "Registration successful.";
                 }
+
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
             }
         }
 
