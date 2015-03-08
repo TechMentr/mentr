@@ -32,14 +32,15 @@ namespace Mentr
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                         cmd.Connection = con;
                         con.Open();
-                        
+
                         using (var reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
                                 member.Name = reader.GetString(reader.GetOrdinal("Name"));
                                 member.Surname = reader.GetString(reader.GetOrdinal("Surname"));
-                                member.Gender = reader.GetChar(reader.GetOrdinal("Gender"));
+                                member.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+                                member.Password = reader.GetString(reader.GetOrdinal("Password"));
                                 member.IsMentor = reader.GetBoolean(reader.GetOrdinal("IsMentor"));
                                 member.IsMentee = reader.GetBoolean(reader.GetOrdinal("IsMentee"));
                             }
@@ -47,19 +48,47 @@ namespace Mentr
 
                         con.Close();
                     }
-                }
-                string message = string.Empty;
-                switch (member.Name)
-                {
-                    case null:
-                        message = "There is no member with this email address.";
-                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
-                        break;
-                    default:
+
+                    var memberSkills = new List<Skill>();
+
+                    using (SqlCommand cmdSkills = new SqlCommand("GetMemberSkillsByEmail"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmdSkills.CommandType = CommandType.StoredProcedure;
+                            cmdSkills.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                            cmdSkills.Connection = con;
+                            con.Open();
+
+                            using (var reader = cmdSkills.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    var skill = new Skill();
+                                    skill.Name = reader.GetString(reader.GetOrdinal("Name"));
+                                    skill.YearsExperience = reader.GetInt32(reader.GetOrdinal("YearsExperience"));
+                                    memberSkills.Add(skill);
+                                }
+                            }
+
+                            con.Close();
+                        }
+
+                        member.Skills = memberSkills.ToArray();
+                    }
+
+                    string hashedPassword = Mentr.Register.Security.HashSHA1(txtPassword.Text);
+
+                    if (member.Name != null && member.Password == hashedPassword)
+                    {
                         Response.Redirect("Home.aspx");
-                        break;
+                    }
+                    else
+                    {
+                        lblLoginResult.Text = "Wrong username or password";
+                    }
+
                 }
-                
             }
         }
     }

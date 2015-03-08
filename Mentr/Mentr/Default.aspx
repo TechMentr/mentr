@@ -78,13 +78,24 @@
             <tr>
             </tr>
             <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"/>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ErrorMessage="Required" Display="Dynamic" ForeColor="Red"
+                        ControlToValidate="txtPassword" runat="server" />
+                </td>
+            </tr>
+            <tr>
                 <tr>
                     <td>
                     </td>
                     <td>
                         <asp:Button Text="Login" runat="server" OnClick="LoginUser" />
-                    </td>
-                    <td>
+                        <asp:Label runat="server" id="lblLoginResult" ForeColor="Red"/>
                     </td>
                 </tr>
             </table>
