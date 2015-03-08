@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TechMentr {
+namespace Mentr {
     
     
     public partial class Site_Mobile {

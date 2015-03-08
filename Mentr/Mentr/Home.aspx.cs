@@ -9,7 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Serialization;
 
-namespace TechMentr
+namespace Mentr
 {
     public partial class Home : System.Web.UI.Page
     {
