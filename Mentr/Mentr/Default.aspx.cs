@@ -32,7 +32,7 @@ namespace Mentr
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                         cmd.Connection = con;
                         con.Open();
-                        
+
                         using (var reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
@@ -48,19 +48,47 @@ namespace Mentr
 
                         con.Close();
                     }
-                }
 
-                string hashedPassword = Mentr.Register.Security.HashSHA1(txtPassword.Text);
+                    var memberSkills = new List<Skill>();
 
-                if (member.Name != null && member.Password == hashedPassword)
-                {
-                    Response.Redirect("Home.aspx");
+                    using (SqlCommand cmdSkills = new SqlCommand("GetMemberSkillsByEmail"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmdSkills.CommandType = CommandType.StoredProcedure;
+                            cmdSkills.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                            cmdSkills.Connection = con;
+                            con.Open();
+
+                            using (var reader = cmdSkills.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    var skill = new Skill();
+                                    skill.Name = reader.GetString(reader.GetOrdinal("Name"));
+                                    skill.YearsExperience = reader.GetInt32(reader.GetOrdinal("YearsExperience"));
+                                    memberSkills.Add(skill);
+                                }
+                            }
+
+                            con.Close();
+                        }
+
+                        member.Skills = memberSkills.ToArray();
+                    }
+
+                    string hashedPassword = Mentr.Register.Security.HashSHA1(txtPassword.Text);
+
+                    if (member.Name != null && member.Password == hashedPassword)
+                    {
+                        Response.Redirect("Home.aspx");
+                    }
+                    else
+                    {
+                        lblLoginResult.Text = "Wrong username or password";
+                    }
+
                 }
-                else 
-                {
-                    lblLoginResult.Text = "Wrong username or password";
-                }
-                
             }
         }
     }
