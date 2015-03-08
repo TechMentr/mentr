@@ -39,7 +39,8 @@ namespace Mentr
                             {
                                 member.Name = reader.GetString(reader.GetOrdinal("Name"));
                                 member.Surname = reader.GetString(reader.GetOrdinal("Surname"));
-                                member.Gender = reader.GetChar(reader.GetOrdinal("Gender"));
+                                member.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+                                member.Password = reader.GetString(reader.GetOrdinal("Password"));
                                 member.IsMentor = reader.GetBoolean(reader.GetOrdinal("IsMentor"));
                                 member.IsMentee = reader.GetBoolean(reader.GetOrdinal("IsMentee"));
                             }
@@ -48,16 +49,16 @@ namespace Mentr
                         con.Close();
                     }
                 }
-                string message = string.Empty;
-                switch (member.Name)
+
+                string hashedPassword = Mentr.Register.Security.HashSHA1(txtPassword.Text);
+
+                if (member.Name != null && member.Password == hashedPassword)
                 {
-                    case null:
-                        message = "There is no member with this email address.";
-                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
-                        break;
-                    default:
-                        Response.Redirect("Home.aspx");
-                        break;
+                    Response.Redirect("Home.aspx");
+                }
+                else 
+                {
+                    lblLoginResult.Text = "Wrong username or password";
                 }
                 
             }
