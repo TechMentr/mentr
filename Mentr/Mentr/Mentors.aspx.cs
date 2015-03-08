@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Mentr
+namespace TechMentr
 {
     public partial class Mentors : System.Web.UI.Page
     {

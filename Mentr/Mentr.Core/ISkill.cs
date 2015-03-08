@@ -1,4 +1,4 @@
-﻿namespace Mentr.Core
+﻿namespace TechMentr.Core
 {
     interface ISkill
     {

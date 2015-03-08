@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
-using Mentr.Core;
+using TechMentr.Core;
 
-namespace Mentr
+namespace TechMentr
 {
     public partial class _Default : Page
     {
@@ -77,7 +77,7 @@ namespace Mentr
                         member.Skills = memberSkills.ToArray();
                     }
 
-                    string hashedPassword = Mentr.Register.Security.HashSHA1(txtPassword.Text);
+                    string hashedPassword = TechMentr.Register.Security.HashSHA1(txtPassword.Text);
 
                     if (member.Name != null && member.Password == hashedPassword)
                     {
