@@ -7,3 +7,4 @@ C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.Core\bin\Debug\Mentr.Core.dll
 C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.Core\bin\Debug\Mentr.Core.pdb
 C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.Core\obj\Debug\Mentr.Core.dll
 C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.Core\obj\Debug\Mentr.Core.pdb
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.Core\obj\Debug\Mentr.Core.csprojResolveAssemblyReference.cache
