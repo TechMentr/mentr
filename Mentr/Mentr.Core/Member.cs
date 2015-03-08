@@ -17,5 +17,7 @@
         public bool IsMentor { get; set; }
 
         public bool IsMentee { get; set; }
+
+        public Skill[] Skills { get; set; }
     }
 }

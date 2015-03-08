@@ -2,8 +2,10 @@
 {
     public class Skill : ISkill
     {
-        public int ID { get; private set; }
+        public int ID { get; set; }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
+
+        public int YearsExperience { get; set; }
     }
 }

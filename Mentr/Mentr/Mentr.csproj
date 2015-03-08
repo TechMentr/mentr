@@ -141,6 +141,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Home.aspx" />
+    <Content Include="Mentees.aspx" />
+    <Content Include="Mentors.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -230,6 +232,20 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mentees.aspx.cs">
+      <DependentUpon>Mentees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mentees.aspx.designer.cs">
+      <DependentUpon>Mentees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mentors.aspx.cs">
+      <DependentUpon>Mentors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mentors.aspx.designer.cs">
+      <DependentUpon>Mentors.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -268,10 +284,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LinkedInConnect\LinkedInConnect.csproj">
-      <Project>{bbf0de88-58a1-413a-a041-b8650fac7b31}</Project>
-      <Name>LinkedInConnect</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Mentr.Core\Mentr.Core.csproj">
       <Project>{72109ba6-ff5c-44e4-9f1f-6eaf05fd7e42}</Project>
       <Name>Mentr.Core</Name>

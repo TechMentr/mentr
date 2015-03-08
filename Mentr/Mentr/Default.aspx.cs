@@ -81,6 +81,8 @@ namespace Mentr
 
                     if (member.Name != null && member.Password == hashedPassword)
                     {
+                        Session["sessFirstName"] = member.Name;
+                        Session["sessEmail"] = member.Email;
                         Response.Redirect("Home.aspx");
                     }
                     else

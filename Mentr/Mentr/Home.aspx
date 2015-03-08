@@ -2,6 +2,11 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    
+    <div style="text-align: right;">
+    <asp:Label runat="server" id="sessName" />
+    </div>
+
     <div class="jumbotron">
         <h2>Women of the week!</h2>
         <p class="lead"></p>
@@ -35,19 +40,13 @@
         <div class="col-md-6">
             <h2>Looking for a Mentor?</h2>
             <p>
-                Blah
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
+                <a class="btn btn-default" href="Mentors.aspx">View results &raquo;</a>
             </p>
         </div>
         <div class="col-md-6">
             <h2>Looking for a Mentee?</h2>
             <p>
-                Blah
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="Mentees.aspx">View results &raquo;</a>
             </p>
         </div>
     </div>

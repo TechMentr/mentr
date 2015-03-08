@@ -5,5 +5,7 @@
         int ID { get; }
 
         string Name { get; }
+
+        int YearsExperience { get; }
     }
 }

@@ -1,0 +1,1 @@
+C:\Dev\Projects\mentr\Mentr\LinkedInConnect\obj\Debug\LinkedInConnect.csprojResolveAssemblyReference.cache
