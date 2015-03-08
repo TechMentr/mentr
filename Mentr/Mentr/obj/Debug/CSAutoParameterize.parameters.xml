@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="SQLAzureConnection-Web.config Connection String" description="SQLAzureConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=cwzyqvu8jc.database.windows.net;Initial Catalog=MentrDb;User ID=room;Password=Database2015;Encrypt=true;Trusted_Connection=false;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Dev\\Projects\\mentr\\Mentr\\Mentr\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SQLAzureConnection']/@connectionString" />
-  </parameter>
-</parameters>

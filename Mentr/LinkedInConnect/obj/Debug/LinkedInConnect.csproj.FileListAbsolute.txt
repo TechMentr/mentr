@@ -1,0 +1,5 @@
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\LinkedInConnect\bin\Debug\LinkedInConnect.dll
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\LinkedInConnect\bin\Debug\LinkedInConnect.pdb
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\LinkedInConnect\obj\Debug\LinkedInConnect.dll
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\LinkedInConnect\obj\Debug\LinkedInConnect.pdb
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\LinkedInConnect\obj\Debug\LinkedInConnect.csprojResolveAssemblyReference.cache

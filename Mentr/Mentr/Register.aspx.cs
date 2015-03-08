@@ -81,7 +81,7 @@ namespace Mentr
                         //cmd.Parameters.Clear();
                         cmdSkill.Parameters.AddWithValue("@MemberId", emailId);
                         cmdSkill.Parameters.AddWithValue("@SkillId", txtSurname.Text.Trim());
-                        cmdSkill.Parameters.AddWithValue("@YearsExperience", );
+                       // cmdSkill.Parameters.AddWithValue("@YearsExperience", );
                         cmdSkill.Connection = con;
                         con.Open();
                         mentorSkillId = Convert.ToInt32(cmdSkill.ExecuteScalar());

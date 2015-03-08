@@ -3,3 +3,7 @@ C:\Dev\Projects\mentr\Mentr\Mentr.SqlServerRepository\bin\Debug\Mentr.SqlServerR
 C:\Dev\Projects\mentr\Mentr\Mentr.SqlServerRepository\obj\Debug\Mentr.SqlServerRepository.csprojResolveAssemblyReference.cache
 C:\Dev\Projects\mentr\Mentr\Mentr.SqlServerRepository\obj\Debug\Mentr.SqlServerRepository.dll
 C:\Dev\Projects\mentr\Mentr\Mentr.SqlServerRepository\obj\Debug\Mentr.SqlServerRepository.pdb
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.SqlServerRepository\bin\Debug\Mentr.SqlServerRepository.dll
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.SqlServerRepository\bin\Debug\Mentr.SqlServerRepository.pdb
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.SqlServerRepository\obj\Debug\Mentr.SqlServerRepository.dll
+C:\Users\Ritu\Documents\GitHub\mentr\Mentr\Mentr.SqlServerRepository\obj\Debug\Mentr.SqlServerRepository.pdb
