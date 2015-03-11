@@ -14,6 +14,8 @@ namespace TechMentr
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var menteeEmail = (string)Session["sessEmail"];
+
             DataSet ds = new DataSet();
             string constr = ConfigurationManager.ConnectionStrings["SQLAzureConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
@@ -23,7 +25,7 @@ namespace TechMentr
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Email", "anastasaki.er@gmail.com");
+                        cmd.Parameters.AddWithValue("@Email", menteeEmail);
                         cmd.Connection = con;
 
                         sda.Fill(ds);

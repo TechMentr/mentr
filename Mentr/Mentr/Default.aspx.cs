@@ -39,7 +39,7 @@ namespace TechMentr
                             {
                                 member.Name = reader.GetString(reader.GetOrdinal("Name"));
                                 member.Surname = reader.GetString(reader.GetOrdinal("Surname"));
-                                member.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+                                //member.Gender = reader.GetString(reader.GetOrdinal("Gender")); TODO
                                 member.Password = reader.GetString(reader.GetOrdinal("Password"));
                                 member.IsMentor = reader.GetBoolean(reader.GetOrdinal("IsMentor"));
                                 member.IsMentee = reader.GetBoolean(reader.GetOrdinal("IsMentee"));
@@ -82,7 +82,7 @@ namespace TechMentr
                     if (member.Name != null && member.Password == hashedPassword)
                     {
                         Session["sessFirstName"] = member.Name;
-                        Session["sessEmail"] = member.Email;
+                        Session["sessEmail"] = txtEmail.Text.Trim();
                         Response.Redirect("Home.aspx");
                     }
                     else

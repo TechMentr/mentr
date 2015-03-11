@@ -19,34 +19,34 @@ namespace TechMentr
             sessName.Text = "Welcome back, " + (string)Session["sessFirstName"] + "!";
             //Burcu
             // users profile url that needs to be encoded
-            String eURL = HttpUtility.UrlEncode("https://uk.linkedin.com/pub/burcu-karabork/24/b76/1");
-            string dataResponse = _oauth.oAuthWebRequest(oAuthLinkedIn.Method.GET, "https://api.linkedin.com/v1/people/url=" + eURL + ":(first-name,last-name,headline,picture-url,site-standard-profile-request)", "");
-            MemoryStream memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(dataResponse));
-            XmlSerializer deserializer = new XmlSerializer(typeof(Person));
-            Person person = (Person)deserializer.Deserialize(new StringReader(dataResponse));
-            lblName1.Text = person.FirstName;
-            lblHeadline1.Text = person.headLine;
-            imgPicture1.ImageUrl = person.ImagerUrl;
-            hlLinkedInUrl1.NavigateUrl = person.ProfileUrl;
+            //String eURL = HttpUtility.UrlEncode("https://uk.linkedin.com/pub/burcu-karabork/24/b76/1");
+            //string dataResponse = _oauth.oAuthWebRequest(oAuthLinkedIn.Method.GET, "https://api.linkedin.com/v1/people/url=" + eURL + ":(first-name,last-name,headline,picture-url,site-standard-profile-request)", "");
+            //MemoryStream memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(dataResponse));
+            //XmlSerializer deserializer = new XmlSerializer(typeof(Person));
+            //Person person = (Person)deserializer.Deserialize(new StringReader(dataResponse));
+            //lblName1.Text = person.FirstName;
+            //lblHeadline1.Text = person.headLine;
+            //imgPicture1.ImageUrl = person.ImagerUrl;
+            //hlLinkedInUrl1.NavigateUrl = person.ProfileUrl;
 
-            //Erasmia
-            // users profile url that needs to be encoded
-            eURL = HttpUtility.UrlEncode("https://uk.linkedin.com/in/erasmiaanastasaki");
-            dataResponse = _oauth.oAuthWebRequest(oAuthLinkedIn.Method.GET, "https://api.linkedin.com/v1/people/url=" + eURL + ":(first-name,last-name,headline,picture-url,site-standard-profile-request)", "");
-            memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(dataResponse));
-            deserializer = new XmlSerializer(typeof(Person));
-            Person person2 = (Person)deserializer.Deserialize(new StringReader(dataResponse));
-            lblName2.Text = person2.FirstName;
-            lblHeadline2.Text = person2.headLine;
-            imgPicture2.ImageUrl = person2.ImagerUrl;
-            hlLinkedInUrl2.NavigateUrl = person2.ProfileUrl;
+            ////Erasmia
+            //// users profile url that needs to be encoded
+            //eURL = HttpUtility.UrlEncode("https://uk.linkedin.com/in/erasmiaanastasaki");
+            //dataResponse = _oauth.oAuthWebRequest(oAuthLinkedIn.Method.GET, "https://api.linkedin.com/v1/people/url=" + eURL + ":(first-name,last-name,headline,picture-url,site-standard-profile-request)", "");
+            //memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(dataResponse));
+            //deserializer = new XmlSerializer(typeof(Person));
+            //Person person2 = (Person)deserializer.Deserialize(new StringReader(dataResponse));
+            //lblName2.Text = person2.FirstName;
+            //lblHeadline2.Text = person2.headLine;
+            //imgPicture2.ImageUrl = person2.ImagerUrl;
+            //hlLinkedInUrl2.NavigateUrl = person2.ProfileUrl;
 
             //Ritu
             // users profile url that needs to be encoded
-            eURL = HttpUtility.UrlEncode("http://uk.linkedin.com/in/vyasritu");
-            dataResponse = _oauth.oAuthWebRequest(oAuthLinkedIn.Method.GET, "https://api.linkedin.com/v1/people/url=" + eURL + ":(first-name,last-name,headline,picture-url,site-standard-profile-request)", "");
-            memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(dataResponse));
-            deserializer = new XmlSerializer(typeof(Person));
+            string eURL = HttpUtility.UrlEncode("http://uk.linkedin.com/in/vyasritu");
+            string dataResponse = _oauth.oAuthWebRequest(oAuthLinkedIn.Method.GET, "https://api.linkedin.com/v1/people/url=" + eURL + ":(first-name,last-name,headline,picture-url,site-standard-profile-request)", "");
+            MemoryStream memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(dataResponse));
+            XmlSerializer deserializer = new XmlSerializer(typeof(Person));
             Person person3 = (Person)deserializer.Deserialize(new StringReader(dataResponse));
             lblName3.Text = person3.FirstName;
             lblHeadline3.Text = person3.headLine;

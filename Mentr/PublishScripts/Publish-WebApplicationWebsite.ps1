@@ -184,14 +184,14 @@ try
     Test-WebApplication
 
     #Create Azure environment described in the JSON configuration file
-    $newEnvironmentResult = New-AzureWebApplicationWebsiteEnvironment -Configuration $Config -DatabaseServerPassword $DatabaseServerPassword
+    $newEnvironTechMentresult = New-AzureWebApplicationWebsiteEnvironment -Configuration $Config -DatabaseServerPassword $DatabaseServerPassword
 
     #Deploy Web Application package if $WebDeployPackage is specified by the user 
     if($WebDeployPackage)
     {
         Publish-AzureWebApplicationToWebsite `
             -Configuration $Config `
-            -ConnectionString $newEnvironmentResult.ConnectionString `
+            -ConnectionString $newEnvironTechMentresult.ConnectionString `
             -WebDeployPackage $WebDeployPackage
     }
 }

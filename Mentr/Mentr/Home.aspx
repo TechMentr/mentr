@@ -12,7 +12,7 @@
         <div class="col-md-4" style="width: 100%; overflow: auto;" >
             <asp:Table runat="server" CellPadding="1" HorizontalAlign="Center" Width="100%" Font-Size="Medium">
                 <asp:TableRow Width="100%">
-                    <asp:TableCell>
+<%--                    <asp:TableCell>
                         <asp:Panel ID="pnlDetails1" runat="server">
                             <hr />
                             <asp:Image ID="imgPicture1" runat="server" /><br />                        
@@ -29,7 +29,7 @@
                             <asp:Label ID="lblHeadline2" runat="server" /><br />
                             <asp:HyperLink ID="hlLinkedInUrl2" runat="server">LinkedIn</asp:HyperLink>
                         </asp:Panel>
-                    </asp:TableCell>
+                    </asp:TableCell>--%>
                     <asp:TableCell>
                         <asp:Panel ID="pnlDetails3" runat="server">
                             <hr />

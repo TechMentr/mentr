@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Welcome to Mentr" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Mentr._Default" %>
+﻿<%@ Page Title="Welcome to TechMentr" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TechMentr._Default" %>
 
 <!DOCTYPE html>
 
@@ -78,13 +78,24 @@
             <tr>
             </tr>
             <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"/>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ErrorMessage="Required" Display="Dynamic" ForeColor="Red"
+                        ControlToValidate="txtPassword" runat="server" />
+                </td>
+            </tr>
+            <tr>
                 <tr>
                     <td>
                     </td>
                     <td>
                         <asp:Button Text="Login" runat="server" OnClick="LoginUser" />
-                    </td>
-                    <td>
+                        <asp:Label runat="server" id="lblLoginResult" ForeColor="Red"/>
                     </td>
                 </tr>
             </table>
@@ -95,7 +106,7 @@
     </div>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mentr</p>
+                <p>&copy; <%: DateTime.Now.Year %> - TechMentr</p>
             </footer>
         </div>
 
