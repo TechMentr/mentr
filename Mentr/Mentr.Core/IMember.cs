@@ -8,7 +8,7 @@
 
         string Surname { get; }
 
-        string Gender { get; }
+        int Gender { get; }
 
         string Password { get; }
 

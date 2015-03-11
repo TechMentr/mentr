@@ -39,7 +39,7 @@ namespace Mentr
                             {
                                 member.Name = reader.GetString(reader.GetOrdinal("Name"));
                                 member.Surname = reader.GetString(reader.GetOrdinal("Surname"));
-                                member.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+                                member.Gender = reader.GetInt32(reader.GetOrdinal("Gender"));
                                 member.Password = reader.GetString(reader.GetOrdinal("Password"));
                                 member.IsMentor = reader.GetBoolean(reader.GetOrdinal("IsMentor"));
                                 member.IsMentee = reader.GetBoolean(reader.GetOrdinal("IsMentee"));
