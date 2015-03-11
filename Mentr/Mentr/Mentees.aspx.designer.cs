@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mentr {
+namespace TechMentr {
     
     
     public partial class Mentees {

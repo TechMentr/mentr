@@ -1,4 +1,4 @@
-﻿namespace Mentr.Core
+﻿namespace TechMentr.Core
 {
     public class Member : IMember
     {
@@ -8,7 +8,7 @@
 
         public string Surname { get; set; }
 
-        public string Gender { get; set; }
+        public int Gender { get; set; }
 
         public string Password { get; set; }
 

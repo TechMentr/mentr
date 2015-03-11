@@ -9,7 +9,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace Mentr
+namespace TechMentr
 {
     public partial class Register : System.Web.UI.Page
     {

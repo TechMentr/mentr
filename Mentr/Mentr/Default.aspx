@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Welcome to Mentr" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Mentr._Default" %>
+﻿<%@ Page Title="Welcome to TechMentr" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TechMentr._Default" %>
 
 <!DOCTYPE html>
 
