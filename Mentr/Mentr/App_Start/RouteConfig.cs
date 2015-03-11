@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace Mentr
+namespace TechMentr
 {
     public static class RouteConfig
     {

@@ -1,4 +1,4 @@
-﻿namespace Mentr.SqlServerRepository
+﻿namespace TechMentr.SqlServerRepository
 {
     public interface IDbConfiguration
     {

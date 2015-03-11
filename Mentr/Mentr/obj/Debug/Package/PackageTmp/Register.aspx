@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Register Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Mentr.Register" %>
+﻿<%@ Page Title="Register Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TechMentr.Register" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
@@ -44,8 +44,11 @@
                     Gender
                 </td>
                 <td>
-                    <asp:RadioButton ID="genderF" Text="F" runat="server" GroupName="gender" CssClass="labelReg"></asp:RadioButton>
-                    <asp:RadioButton ID="genderM" Text="M" runat="server" GroupName="gender" CssClass="labelReg"></asp:RadioButton>
+                    <asp:RadioButtonList runat="server" ID="genderId" RepeatLayout="Flow" RepeatDirection="Horizontal" style="display:inline">
+                        <asp:ListItem Value="0">F</asp:ListItem>
+                        <asp:ListItem Value="1">M</asp:ListItem>
+                    </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator ErrorMessage="Select One option" ForeColor="Red" runat="server" ControlToValidate="genderId"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -103,13 +106,18 @@
                 </td>
             </tr>
             <tr>
-            <td>
-                <asp:Label ID="Label9" runat="server" Text="Skills"></asp:Label>
-            </td>
-            <td colspan="2">
-                <asp:CheckBoxList ID="cblstskills" runat="server" Width="128px" Enabled="False"></asp:CheckBoxList>
-            </td>
-            <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="Label9" runat="server" Text="Skills"></asp:Label>
+                </td>
+                <td>
+                    <asp:CheckBoxList ID="cblstSkills" runat="server" Width="128px"></asp:CheckBoxList>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtYearsExperience" runat="server" CssClass="labelReg"/>
+                </td>
+                <td>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtYearsExperience" runat="server" ErrorMessage="Only Numbers allowed" ValidationExpression="\d+"/>
+                </td>
             </tr>
             <tr>
                 <td>

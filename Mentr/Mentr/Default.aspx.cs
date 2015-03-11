@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
-using Mentr.Core;
+using TechMentr.Core;
 
-namespace Mentr
+namespace TechMentr
 {
     public partial class _Default : Page
     {
@@ -82,7 +82,7 @@ namespace Mentr
                     if (member.Name != null && member.Password == hashedPassword)
                     {
                         Session["sessFirstName"] = member.Name;
-                        Session["sessEmail"] = member.Email;
+                        Session["sessEmail"] = txtEmail.Text.Trim();
                         Response.Redirect("Home.aspx");
                     }
                     else

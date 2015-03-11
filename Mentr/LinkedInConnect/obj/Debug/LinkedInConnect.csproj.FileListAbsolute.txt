@@ -1,1 +1,5 @@
 C:\Dev\Projects\mentr\Mentr\LinkedInConnect\obj\Debug\LinkedInConnect.csprojResolveAssemblyReference.cache
+C:\Dev\Projects\mentr\Mentr\LinkedInConnect\bin\Debug\LinkedInConnect.dll
+C:\Dev\Projects\mentr\Mentr\LinkedInConnect\bin\Debug\LinkedInConnect.pdb
+C:\Dev\Projects\mentr\Mentr\LinkedInConnect\obj\Debug\LinkedInConnect.dll
+C:\Dev\Projects\mentr\Mentr\LinkedInConnect\obj\Debug\LinkedInConnect.pdb
