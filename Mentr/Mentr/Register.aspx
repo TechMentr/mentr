@@ -1,13 +1,36 @@
-﻿<%@ Page Title="Register Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TechMentr.Register" %>
+﻿<%@ Page Title="Register Page" Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TechMentr.Register" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
     .labelReg
     {
         margin:5px;
     }
     </style>
-     
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+            </div>
+        </div>
+    </div>
     <div>
         <table border="0" cellpadding="0" cellspacing="0">
             <tr>
@@ -123,13 +146,17 @@
                 <td>
                 </td>
                 <td>
-                    <asp:Button Text="Register" runat="server" OnClick="RegisterUser" CssClass="labelReg"/>
+                    <asp:Button class="btn btn-default" Text="Register" runat="server" OnClick="RegisterUser" CssClass="labelReg"/>
                 </td>
                 <td>
                 </td>
             </tr>
         </table>
     </div>   
-            
-        
-</asp:Content>
+    <hr />
+    <footer>
+        <p>&copy; <%: DateTime.Now.Year %> - TechMentr</p>
+    </footer>
+    </form>
+</body>
+</html>
