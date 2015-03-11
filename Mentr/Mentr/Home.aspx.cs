@@ -9,7 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Serialization;
 
-namespace TechMentr
+namespace Mentr
 {
     public partial class Home : System.Web.UI.Page
     {
@@ -20,13 +20,13 @@ namespace TechMentr
             //Burcu
             // users profile url that needs to be encoded
             String eURL = HttpUtility.UrlEncode("https://uk.linkedin.com/pub/burcu-karabork/24/b76/1");
-            string dataResponse = _oauth.oAuthWebRequest(oAuthLinkedIn.Method.GET, "https://api.linkedin.com/v1/people/url=" + eURL + ":(first-name,last-name,headline,picture-url,site-standard-profile-request)", "");
+            string   dataResponse = _oauth.oAuthWebRequest(oAuthLinkedIn.Method.GET, "https://api.linkedin.com/v1/people/url=" + eURL + ":(first-name,last-name,headline,picture-url,site-standard-profile-request)", "");
             MemoryStream memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(dataResponse));
             XmlSerializer deserializer = new XmlSerializer(typeof(Person));
             Person person = (Person)deserializer.Deserialize(new StringReader(dataResponse));
             lblName1.Text = person.FirstName;
             lblHeadline1.Text = person.headLine;
-            imgPicture1.ImageUrl = person.ImagerUrl;
+            imgPicture1.ImageUrl = "~/Content/images/Burcu.jpg";//"https://media.licdn.com/mpr/mpr/shrink_500_500/p/2/000/190/2a4/2594d32.jpg"; //person.ImagerUrl;
             hlLinkedInUrl1.NavigateUrl = person.ProfileUrl;
 
             //Erasmia
@@ -38,7 +38,7 @@ namespace TechMentr
             Person person2 = (Person)deserializer.Deserialize(new StringReader(dataResponse));
             lblName2.Text = person2.FirstName;
             lblHeadline2.Text = person2.headLine;
-            imgPicture2.ImageUrl = person2.ImagerUrl;
+            imgPicture2.ImageUrl = "~/Content/images/Erasmia.jpg"; //person2.ImagerUrl;
             hlLinkedInUrl2.NavigateUrl = person2.ProfileUrl;
 
             //Ritu
